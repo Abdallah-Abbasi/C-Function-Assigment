@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void printMenu(int selection);
+void printMenu();
 double calculatePrice(int ConKiloWatt);
 
 int main() {
@@ -10,7 +10,8 @@ int main() {
     printf("Enter the amount of energy consumed in kW: ");
     scanf("%d", &ConKiloWatt);
 
-    printMenu(selection);
+    printMenu();
+    scanf("%d", &selection);
 
     if (selection == 1) {
         price = calculatePrice(ConKiloWatt);
@@ -24,19 +25,18 @@ int main() {
     return 0;
 }
 
-double calculatePrice(int ConKiloWatt) {
-    double price;
-    if (ConKiloWatt >= 100) {
-        price = ConKiloWatt * 1.0;
-    } else {
-        price = (ConKiloWatt - 100) * 2.0 + 100;
-    }
-    return price;
-}
-
-void printMenu(int selection) {
+void printMenu() {
     printf("\n1 - cal_Price.\n");
     printf("2 - Exit.\n");
     printf("......enter your choice: ");
-    scanf("%d", &selection);
+}
+
+double calculatePrice(int ConKiloWatt) {
+    double price;
+    if (ConKiloWatt < 100) {
+        price = ConKiloWatt * 1.0;
+    } else {
+        price = 100 + (ConKiloWatt - 100) * 2.0;
+    }
+    return price;
 }
