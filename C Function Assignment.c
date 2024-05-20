@@ -33,10 +33,11 @@ void printMenu() {
 
 double calculatePrice(int ConKiloWatt) {
     double price;
-    if (ConKiloWatt < 100) {
+    if (ConKiloWatt <= 100) {
         price = ConKiloWatt * 1.0;
     } else {
         price = 100 + (ConKiloWatt - 100) * 2.0;
     }
     return price;
 }
+
