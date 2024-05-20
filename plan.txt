@@ -1,0 +1,19 @@
+
+First we ask the user to enter the amout of kilo watts that are consumed
+so before we ask we create a variable called ConKiloWatt that we will scanf and then save it in it
+we create a function called printMenu that takes two parameters (1, 2){
+if its 1 then calculate the price (cal_Price)
+cal_Price is a function
+if 2 then exit  (Exit)
+.....enter your choice
+}
+
+
+calPrice(ConKiloWatt){
+if (ConKiloWatt >= 100) {
+then Price = ConKiloWatt  * 1
+}
+else if (ConKiloWatt < 100) then {
+ Price = ((ConKiloWatt -100) *2) + 100
+}
+else 
